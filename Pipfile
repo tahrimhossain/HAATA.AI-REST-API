@@ -12,6 +12,7 @@ flask-cors = "*"
 bcrypt = "*"
 pyjwt = "*"
 python-dotenv = "*"
+gpxpy = "*"
 
 [dev-packages]
 
