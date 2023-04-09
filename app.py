@@ -146,7 +146,7 @@ class CreatedPaths(Resource):
 				document.pop("_id")
 				document.pop("user_id")
 				paths.append(document)
-				break
+				
 
 			return {"paths":paths}	
 			

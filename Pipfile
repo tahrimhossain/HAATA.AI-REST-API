@@ -13,6 +13,7 @@ bcrypt = "*"
 pyjwt = "*"
 python-dotenv = "*"
 gpxpy = "*"
+gunicorn = "*"
 
 [dev-packages]
 
