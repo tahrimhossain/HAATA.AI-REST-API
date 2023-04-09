@@ -11,7 +11,7 @@ marshmallow = "*"
 flask-cors = "*"
 bcrypt = "*"
 pyjwt = "*"
-python-dotenv = "*"
+python-dotenv = "==0.21.1"
 gpxpy = "*"
 gunicorn = "*"
 
