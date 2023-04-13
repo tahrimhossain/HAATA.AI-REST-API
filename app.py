@@ -114,7 +114,8 @@ class WalkabilityDataEntry(Resource):
 					for point in segment.points:
 						coordinates.append({"latitude":point.latitude,"longitude":point.longitude,"elavation":point.elevation,"time":point.time.strftime("%Y-%m-%d")})
 
-			database.paths.insert_one({"coordinates":coordinates,"rating":path_rating['rating'],"permanent_obstacle_count":path_rating['permanent_obstacle_count'],"temporary_obstacle_count":path_rating['temporary_obstacle_count'],"hazard":path_rating['hazard'],"cleanliness":path_rating['cleanliness'],"safety":path_rating['safety'],"congestion":path_rating['congestion'],"width":path_rating['width'],"user_id":str(user_info['_id'])})			
+			database.paths.insert_one({"coordinates":coordinates,"rating":path_rating['rating'],"permanent_obstacle_count":path_rating['permanent_obstacle_count'],"temporary_obstacle_count":path_rating['temporary_obstacle_count'],"hazard":path_rating['hazard'],"cleanliness":path_rating['cleanliness'],"safety":path_rating['safety'],"congestion":path_rating['congestion'],"width":path_rating['width'],"user_id":str(user_info['_id'])})
+			return {"message":"Successfully created"}			
 		except BadRequest as e:
 			abort(400,message=e.description)
 		except Unauthorized	as e:
@@ -124,7 +125,6 @@ class WalkabilityDataEntry(Resource):
 		except ExpiredSignatureError as e:
 			abort(401,message='Token expired')		
 		except Exception as e:
-			print(e)
 			abort(400,message="Could not process request")
 
 class CreatedPaths(Resource):
